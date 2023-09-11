@@ -1,0 +1,11 @@
+div[iframe-template-type='data-vs-slider'] {
+    display: block;
+    position: fixed;
+    background-color: black;
+    top: 0px;
+    right: 0px;
+    width: 700px;
+    top: 0px;
+    right: 0px;
+    height: 100vh;
+}

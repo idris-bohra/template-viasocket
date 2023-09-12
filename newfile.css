@@ -1,3 +1,16 @@
+div[iframe-parent-template-type='data-vs-slider'] {
+    display: block;
+    position: fixed;
+    background-color: rgba(0, 0, 0, .75);
+    top: 0px;
+    right: 0px;
+    width: 100%;
+    top: 0px;
+    right: 0px;
+    height: 100%;
+    animation: parent-div-animation 0.3s ease-in-out 0s 1 forwards;
+}
+
 div[iframe-template-type='data-vs-slider'] {
     display: block;
     position: fixed;
@@ -11,24 +24,17 @@ div[iframe-template-type='data-vs-slider'] {
     border-radius: 15px 0px 0px 15px;
 }
 
-div[iframe-parent-template-type='data-vs-slider'] {
-    display: block;
-    position: fixed;
-    /* background-color: rgba(0, 0, 0, .75); */
-    top: 0px;
-    right: 0px;
-    width: 100%;
-    top: 0px;
-    right: 0px;
-    height: 100%;
-    animation: parent-div-animation 0.3s ease-in-out 0s 1 forwards;
-}
-
 .wc-slider-close-btn {
     position: absolute;
     top: 5px;
     left: -27px;
     cursor: pointer;
+}
+
+iframe {
+    outline: none;
+    border: 1px solid grey;
+    border-radius: 15px 0px 0px 15px;
 }
 
 @keyframes slider-right-to-left {
@@ -59,10 +65,4 @@ div[iframe-parent-template-type='data-vs-slider'] {
     100% {
         transform: 1;
     }
-}
-
-iframe {
-    outline: none;
-    border: 1px solid grey;
-    border-radius: 15px 0px 0px 15px;
 }

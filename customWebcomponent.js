@@ -1,9 +1,9 @@
 // CONSTANT-DECLARATION.
 let TEMPLATE_TYPES = {
     DATA_VS_SLIDER: 'data-vs-slider',
-    DATA_VS_POPUP: 'data-vs-popup',
-    DATA_VS_STANDARD: 'data-vs-standard',
-    DATA_VS_FULLPAGE: 'data-vs-fullpage',
+    // DATA_VS_POPUP: 'data-vs-popup',
+    // DATA_VS_STANDARD: 'data-vs-standard',
+    // DATA_VS_FULLPAGE: 'data-vs-fullpage',
 }
 let TEMPLATE_NAME = 'viasocket-template';
 let IFRAME_ATTRIBUTE = 'iframe-template-type';
@@ -22,14 +22,14 @@ wcSlider.forEach(element => {
         const divElement = document.createElement('div');
         divElement.setAttribute(IFRAME_ATTRIBUTE, TEMPLATE_TYPES.DATA_VS_SLIDER);
         parentDiv.setAttribute(IFRAME_PARENT_ATTRIBUTE, TEMPLATE_TYPES.DATA_VS_SLIDER);
-        const templateId = element.getAttribute(TEMPLATE_TYPES.DATA_VS_SLIDER);
+        const authToken = element.getAttribute(TEMPLATE_TYPES.DATA_VS_SLIDER);
         const iframe = document.createElement("iframe");
         const imgElement = document.createElement("img");
         imgElement.src = "./close-icon.svg";
         imgElement.style.width = '24px';
         imgElement.classList.add('wc-slider-close-btn');
         iframe.setAttribute(IFRAME_ATTRIBUTE, TEMPLATE_TYPES.DATA_VS_SLIDER);
-        iframe.src = `https://www.viasocket.com`;
+        iframe.src = `https://flow.viasocket.com/projects`;
         iframe.style.width = '100%';
         iframe.style.height = "100%";
         divElement.appendChild(iframe);
@@ -38,7 +38,7 @@ wcSlider.forEach(element => {
         document.body.appendChild(parentDiv);
         document.body.style.overflow = "hidden";
         imgElement.addEventListener('click', () => {
-            parentDiv.style.display="none";
+            document.body.removeChild(parentDiv);
             document.body.style.overflow = "auto";
         })
     });

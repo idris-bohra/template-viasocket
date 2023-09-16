@@ -26,13 +26,16 @@ class ViaScoketTemplate extends HTMLElement {
                 divElement.setAttribute(IFRAME_ATTRIBUTE, TEMPLATE_TYPES.DATA_VS_SLIDER);
                 parentDiv.setAttribute(IFRAME_PARENT_ATTRIBUTE, TEMPLATE_TYPES.DATA_VS_SLIDER);
                 const authToken = element.getAttribute(TEMPLATE_TYPES.DATA_VS_SLIDER);
+                const dataTosend = {
+                    jwt : authToken,
+                }
                 const iframe = document.createElement("iframe");
                 const imgElement = document.createElement("img");
                 imgElement.src = "./close-icon.svg";
                 imgElement.style.width = '24px';
                 imgElement.classList.add('wc-slider-close-btn');
                 iframe.setAttribute(IFRAME_ATTRIBUTE, TEMPLATE_TYPES.DATA_VS_SLIDER);
-                iframe.src = `http://localhost:3000/idrisbohra/idrisidhelloworld`;
+                iframe.src = `http://localhost:3000/embed`;
                 iframe.style.width = '100%';
                 iframe.style.height = "100%";
                 divElement.appendChild(iframe);
@@ -41,7 +44,7 @@ class ViaScoketTemplate extends HTMLElement {
                 document.body.appendChild(parentDiv);
                 document.body.style.overflow = "hidden";
                 iframe.addEventListener('load', () => {
-                    iframe.contentWindow.postMessage(authToken, 'http://localhost:3000/idrisbohra/idrisidhelloworld');
+                    iframe.contentWindow.postMessage(dataTosend, 'http://localhost:3000/embed');
                 });
                 imgElement.addEventListener('click', () => {
                     document.body.removeChild(parentDiv);
